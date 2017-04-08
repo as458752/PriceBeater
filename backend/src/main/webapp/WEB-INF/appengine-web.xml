@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+    <application>pivotal-realm-162221</application>
+    <version>2</version>
+
+  <instance-class>F2</instance-class>
+  <automatic-scaling>
+  <min-idle-instances>3</min-idle-instances>
+  <max-idle-instances>automatic</max-idle-instances>
+  <min-pending-latency>30ms</min-pending-latency>
+  <max-pending-latency>automatic</max-pending-latency>
+  </automatic-scaling>
+  <!--
+    Allows App Engine to send multiple requests to one instance in parallel:
+  -->
+  <threadsafe>true</threadsafe>
+
+  <!-- Configure serving/caching of GWT files -->
+  <static-files>
+    <include path="**" />
+
+    <!-- The following line requires App Engine 1.3.2 SDK -->
+    <include path="**.nocache.*" expiration="0s" />
+
+    <include path="**.cache.*" expiration="365d" />
+    <exclude path="**.gwt.rpc" />
+  </static-files>
+
+    <system-properties>
+        <property name="java.util.logging.config.file" value="WEB-INF/logging.properties" />
+    </system-properties>
+</appengine-web-app>
