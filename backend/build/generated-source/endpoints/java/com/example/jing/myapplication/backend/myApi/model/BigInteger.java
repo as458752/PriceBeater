@@ -19,7 +19,7 @@
 package com.example.jing.myapplication.backend.myApi.model;
 
 /**
- * Model definition for MyBean.
+ * Model definition for BigInteger.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the myApi. For a detailed explanation see:
@@ -29,37 +29,58 @@ package com.example.jing.myapplication.backend.myApi.model;
  * @author Google, Inc.
  */
 @SuppressWarnings("javadoc")
-public final class MyBean extends com.google.api.client.json.GenericJson {
+public final class BigInteger extends com.google.api.client.json.GenericJson {
 
   /**
    * The value may be {@code null}.
    */
   @com.google.api.client.util.Key
-  private java.lang.String data;
+  private java.lang.Integer bit;
+
+  /**
+   * The value may be {@code null}.
+   */
+  @com.google.api.client.util.Key
+  private java.lang.Integer lowestSetBit;
 
   /**
    * @return value or {@code null} for none
    */
-  public java.lang.String getData() {
-    return data;
+  public java.lang.Integer getBit() {
+    return bit;
   }
 
   /**
-   * @param data data or {@code null} for none
+   * @param bit bit or {@code null} for none
    */
-  public MyBean setData(java.lang.String data) {
-    this.data = data;
+  public BigInteger setBit(java.lang.Integer bit) {
+    this.bit = bit;
+    return this;
+  }
+
+  /**
+   * @return value or {@code null} for none
+   */
+  public java.lang.Integer getLowestSetBit() {
+    return lowestSetBit;
+  }
+
+  /**
+   * @param lowestSetBit lowestSetBit or {@code null} for none
+   */
+  public BigInteger setLowestSetBit(java.lang.Integer lowestSetBit) {
+    this.lowestSetBit = lowestSetBit;
     return this;
   }
 
   @Override
-  public MyBean set(String fieldName, Object value) {
-    return (MyBean) super.set(fieldName, value);
+  public BigInteger set(String fieldName, Object value) {
+    return (BigInteger) super.set(fieldName, value);
   }
 
   @Override
-  public MyBean clone() {
-    return (MyBean) super.clone();
+  public BigInteger clone() {
+    return (BigInteger) super.clone();
   }
 
 }

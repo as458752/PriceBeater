@@ -9,6 +9,7 @@ package com.example.Jing.myapplication.backend;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
+import com.google.appengine.repackaged.com.google.gson.JsonObject;
 
 import javax.inject.Named;
 
@@ -36,5 +37,11 @@ public class MyEndpoint {
 
         return response;
     }
+    @ApiMethod(name = "shopRequest")
+    public MyBean shopRequest(JsonObject json) {
+        MyBean response = new MyBean();
+       // response.setData("Hi, " + name);
 
+        return response;
+    }
 }
